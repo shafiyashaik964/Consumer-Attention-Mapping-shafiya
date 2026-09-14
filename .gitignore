@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Node
+node_modules/
+
+# Generated AI frames
+backend/app/ai/frames/
+backend/app/ai/outputs/
+backend/app/ai/heatmap-output/
+backend/heatmap-output/
+
+# Uploaded videos
+backend/app/uploads/
+
+# YOLO runs
+runs/
+
+# ML models
+*.pt
+*.pth
+
+# Dataset
+ml/dataset/
