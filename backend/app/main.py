@@ -56,7 +56,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "https://consumer-attention-mapping-shafiya.vercel.app",
+        "https://consumer-attention-mapping-shafiya-n2e7hh20z.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
