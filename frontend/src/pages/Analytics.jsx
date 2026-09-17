@@ -612,15 +612,9 @@ function Analytics() {
   const gazeSummary =
     result.gaze_summary || {};
 
-  const productPreferences =
-    result.product_preferences || {};
 
   const shelfZoneAnalysis =
     result.shelf_zone_analysis || {};
-
-  const brandLoyalty =
-    result.brand_loyalty || {};
-
 
   const productAttractiveness =
     result.product_attractiveness || {};

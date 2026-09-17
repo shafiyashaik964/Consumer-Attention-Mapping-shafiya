@@ -102,32 +102,27 @@ function Camera() {
      TOKEN
   ======================================================= */
 
-  const getToken = () => {
+  const getToken = useCallback(() => {
 
-    return (
-      localStorage.getItem("token") ||
-      localStorage.getItem("access_token") ||
-      ""
-    );
+  return (
+    localStorage.getItem("token") ||
+    localStorage.getItem("access_token") ||
+    ""
+  );
 
-  };
+}, []);
 
+const authHeaders = useCallback(() => {
 
-  /* =======================================================
-     AUTH HEADERS
-  ======================================================= */
+  const token = getToken();
 
-  const authHeaders = () => {
+  return token
+    ? {
+        Authorization: `Bearer ${token}`,
+      }
+    : {};
 
-    const token = getToken();
-
-    return token
-      ? {
-          Authorization: `Bearer ${token}`,
-        }
-      : {};
-
-  };
+}, [getToken]);
 
 
   /* =======================================================
@@ -243,7 +238,7 @@ function Camera() {
 
     }
 
-  }, []);
+    }, [authHeaders]);
 
 
   /* =======================================================

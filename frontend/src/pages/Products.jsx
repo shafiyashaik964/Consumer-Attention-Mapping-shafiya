@@ -15,7 +15,7 @@ import {
   FaLayerGroup,
 } from "react-icons/fa";
 
-import api, {
+import {
   getStores,
   getProducts,
   getShelves,

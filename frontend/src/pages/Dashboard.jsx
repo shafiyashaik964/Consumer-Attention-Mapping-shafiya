@@ -536,75 +536,69 @@ function Dashboard() {
      ZONE ANALYSIS
   ===================================================== */
 
-  const zones =
-
-    analysis?.shelf_zone_analysis?.zones ||
-
-    analysis?.shelf_zone_analysis ||
-
-    {};
-
-
   const zoneRows =
 
-    useMemo(() => {
+  useMemo(() => {
 
+    const zones =
 
-      if (
+      analysis?.shelf_zone_analysis?.zones ||
 
-        !zones ||
+      analysis?.shelf_zone_analysis ||
 
-        typeof zones !== "object" ||
+      {};
 
-        Array.isArray(zones)
+    if (
 
-      ) {
+      !zones ||
 
-        return [];
+      typeof zones !== "object" ||
 
-      }
+      Array.isArray(zones)
 
+    ) {
 
-      return Object.entries(zones)
+      return [];
 
-        .map(
+    }
 
-          ([name, data]) => ({
+    return Object.entries(zones)
 
-            name,
+      .map(
 
+        ([name, data]) => ({
 
-            shoppers:
+          name,
 
-              number(
+          shoppers:
 
-                data?.unique_shoppers ??
+            number(
 
-                data?.unique_people ??
+              data?.unique_shoppers ??
 
-                data?.shoppers_count ??
+              data?.unique_people ??
 
-                data?.total_shoppers
+              data?.shoppers_count ??
 
-              ),
+              data?.total_shoppers
 
-          })
+            ),
 
-        )
+        })
 
-        .sort(
+      )
 
-          (a, b) =>
+      .sort(
 
-            b.shoppers -
+        (a, b) =>
 
-            a.shoppers
+          b.shoppers -
 
-        );
+          a.shoppers
 
+      );
 
-    }, [zones]);
-
+  }, [analysis]);
 
   /* =====================================================
      SHOPPING PATTERNS
@@ -616,16 +610,11 @@ function Dashboard() {
 
     {};
 
+  //const segments =
 
-  /* =====================================================
-     CONSUMER SEGMENTS
-  ===================================================== */
+  //analysis?.consumer_segments ||
 
-  const segments =
-
-    analysis?.consumer_segments ||
-
-    {};
+  //{};
 
 
   /* =====================================================
