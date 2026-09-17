@@ -3,8 +3,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import "../styles/Heatmaps.css";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
-
+const API_BASE_URL =
+  process.env.REACT_APP_API_URL || "http://127.0.0.1:8000";
 function Heatmap() {
   const [analytics, setAnalytics] = useState(null);
   const [loading, setLoading] = useState(true);
