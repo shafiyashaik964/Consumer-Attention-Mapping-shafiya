@@ -58,9 +58,7 @@ class PersonTracker:
         # FFMPEG PATH
         # =====================================================
 
-        self.ffmpeg_path = (
-            r"C:\Users\shaik\Downloads\ffmpeg\bin\ffmpeg.exe"
-        )
+       self.ffmpeg_path = "ffmpeg"
 
         # =====================================================
         # LOAD YOLOv8 NANO
