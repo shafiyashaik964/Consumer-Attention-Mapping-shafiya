@@ -37,3 +37,4 @@ mediapipe==1.0.1
 numpy==2.5.1
 reportlab==5.0.1
 openpyxl==3.1.5
+lap>=0.5.12
